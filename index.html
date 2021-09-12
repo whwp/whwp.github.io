@@ -1,3 +1,42 @@
 <body>
+<pre style="background-color:grey">
+<code>
+
+//注意：考虑结果是否会overflow
+public class Solution {
+  //pay attention: return type <span style="background-color:green">is long type </span>
+  public long fibonacci(int K) {
+    //corner case: K < 0
+    if (K <= 0) {
+      <mark style="color:red">return 0;</mark>
+    } 
+    if (K == 1) {
+      return 1;
+    }
+    //pay attention: a and b are long type.
+    long a = 0;
+    long b = 1;
+    for (int i = 2; i <= K; i++) {
+      //注意 temp的作用域，for循环外面temp无效，不能在程序的最后 return temp
+      long temp = a + b;
+      a = b;
+      b = temp;
+    }
+    return b;
+  }
+}
+
+//time complexity: O(K)
+//space complexity: O(1)
+</code>
+</pre>
+
+<pre>
+<code>
 <mark>Marked text</mark>
+<span style="background-color: orange">Marked text</span>
+<mark style="background-color: lightblue; color:red">Marked text</mark>
+</code>
+</pre>
+
 </body>
